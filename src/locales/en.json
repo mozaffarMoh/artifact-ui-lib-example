@@ -1,0 +1,277 @@
+{
+  "appHero": {
+    "eyebrow": "External consumer playground",
+    "title": "Test @artifact/ui-lib components in a separate Vite app",
+    "description": "Each section below targets a different part of the published library so visual tokens, interactivity, overlays, and controlled component behavior can be verified in one place.",
+    "packageSource": {
+      "label": "Package source",
+      "description": "Installed from npm dependency"
+    },
+    "styleSource": {
+      "label": "Style source",
+      "description": "Imported from @artifact/ui-lib/ui-lib.css"
+    },
+    "navigationMove": {
+      "label": "Sidebar-controlled locale",
+      "description": "Language switching now lives in the sidebar so the navigation shell tests localization, direction, and layout behavior together.",
+      "languageLabel": "Active language",
+      "directionLabel": "Active direction"
+    },
+    "language": {
+      "label": "Language and locale",
+      "description": "Powered by react-i18next so changing the language also updates direction and all static UI copy.",
+      "placeholder": "Choose a language",
+      "options": {
+        "en": "English",
+        "ar": "Arabic"
+      },
+      "direction": "Direction: {{direction}}"
+    },
+    "directions": {
+      "ltr": "LTR",
+      "rtl": "RTL"
+    }
+  },
+  "buttons": {
+    "title": "Buttons and emphasis states",
+    "description": "This validates color tokens, variants, loading states, and tooltip composition.",
+    "examples": {
+      "primary": "Primary action",
+      "success": "Success state",
+      "warning": "Warning state",
+      "info": "Info state",
+      "errorOutline": "Error outline",
+      "softSecondary": "Soft secondary",
+      "ghost": "Ghost action",
+      "link": "Link action",
+      "hover": "Hover for tooltip",
+      "saveDraft": "Save draft",
+      "savingPreview": "Saving preview",
+      "floating": "Floating CTA"
+    },
+    "tooltip": "Tooltip rendering proves floating styles and layering work in the consumer app."
+  },
+  "checklist": {
+    "title": "Integration checklist",
+    "description": "Use these checks while reviewing the demo sections.",
+    "items": {
+      "buttons": "Buttons should render distinct brand tones and variants, not browser defaults.",
+      "fields": "Inputs, selects, sliders, and toggles should keep rounded token-driven styling and focus states.",
+      "table": "The data table should support search, sorting, pagination, and row selection in the consumer app.",
+      "feedback": "Dialog and toast feedback should prove overlay, portal, and animation styles are shipped correctly.",
+      "direction": "Switching between English and Arabic should update layout direction for the full page and portal-based UI.",
+      "state": "Controlled values should update live inside the consumer app without prop or state mismatches."
+    }
+  },
+  "form": {
+    "title": "Form controls",
+    "description": "Controlled inputs confirm that the packaged fields work correctly with local React state.",
+    "fullName": "Full name",
+    "fullNamePlaceholder": "Integration tester",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "emailValid": "Looks valid for this smoke test.",
+    "emailInvalid": "Enter a valid email to test the error state.",
+    "team": "Team",
+    "teamPlaceholder": "Choose a team",
+    "teams": {
+      "design": "Design systems",
+      "platform": "Platform engineering",
+      "qa": "QA and release",
+      "ops": "Operations"
+    },
+    "reviewDate": "Review date",
+    "reviewDatePlaceholder": "Choose a test date",
+    "qaNotes": "QA notes",
+    "qaNotesMessage": "Text area styling should match the rest of the field system.",
+    "qaNotesPlaceholder": "Capture the observed component behavior",
+    "preview": "Preview:",
+    "fallbacks": {
+      "name": "No name",
+      "email": "No email",
+      "team": "No team",
+      "date": "No date"
+    },
+    "resetDate": "Reset date"
+  },
+  "selection": {
+    "title": "Toggles and selection controls",
+    "description": "This section stresses checkbox, switch, radio, and slider behavior with live state updates.",
+    "emailAlerts": {
+      "label": "Email alerts",
+      "message": "Tests checkbox label, hint text, and checked styling."
+    },
+    "pushAlerts": {
+      "label": "Push alerts",
+      "message": "Uses the same control with a separate local state path."
+    },
+    "releaseTrack": "Release track",
+    "tracks": {
+      "stable": {
+        "label": "Stable",
+        "message": "Expected production behavior."
+      },
+      "beta": {
+        "label": "Beta",
+        "message": "Feature-complete but still under review."
+      },
+      "canary": {
+        "label": "Canary",
+        "message": "Fastest iteration path for smoke testing."
+      }
+    },
+    "qualityScore": "Quality score",
+    "qualityMessage": "Move the thumb to verify track, range, and value label rendering.",
+    "publishReady": {
+      "label": "Publish ready",
+      "message": "Switch styles should react cleanly across checked, unchecked, and focus states."
+    },
+    "currentState": "Current state: {{track}} | quality {{score}}% | publish {{ready}}",
+    "ready": {
+      "yes": "yes",
+      "no": "no"
+    },
+    "maxOutScore": "Max out score"
+  },
+  "table": {
+    "title": "Data table example",
+    "description": "This uses the packaged table component with client-side search, sorting, pagination, and row selection so you can verify layout behavior in both English and Arabic.",
+    "currentDirection": "Current direction: {{direction}}. Switch the page language and confirm table alignment, search, pagination, and row selection still feel correct.",
+    "direction": {
+      "ltr": "LTR",
+      "rtl": "RTL"
+    },
+    "columns": {
+      "component": "Component",
+      "owner": "Owner",
+      "locale": "Locale",
+      "status": "Status",
+      "qaScore": "QA score",
+      "lastUpdate": "Last update"
+    },
+    "searchPlaceholder": "Search component or owner",
+    "selectedCount": "Selected {{count}}",
+    "emptyState": "No matching rows",
+    "searchEmptyState": "No results matched the current search.",
+    "selectedRows": "Selected rows:",
+    "none": "none",
+    "status": {
+      "ready": "Ready",
+      "review": "Review",
+      "blocked": "Blocked"
+    },
+    "components": {
+      "button": "Button",
+      "select": "Select",
+      "datePicker": "Date picker",
+      "toast": "Toast",
+      "dataTable": "Data table",
+      "dialog": "Dialog"
+    },
+    "owners": {
+      "design": "Design systems",
+      "platform": "Platform engineering",
+      "qa": "QA and release",
+      "ops": "Operations"
+    },
+    "locales": {
+      "global": "Global",
+      "bilingual": "Arabic + English",
+      "arabic": "Arabic"
+    },
+    "texts": {
+      "selectAllRows": "Select all rows"
+    },
+    "sorting": {
+      "sortButton": "Sort",
+      "ascending": "Ascending",
+      "descending": "Descending",
+      "removeSort": "Remove sort"
+    },
+    "pagination": {
+      "firstPage": "First page",
+      "previous": "Previous",
+      "next": "Next",
+      "lastPage": "Last page",
+      "pageSize": "Rows per page",
+      "goToPage": "Go to page",
+      "goToPageButton": "Go",
+      "pageOf": "Page {{page}} of {{pageCount}}",
+      "showing": "Showing {{from}}-{{to}} of {{total}}"
+    }
+  },
+  "feedback": {
+    "title": "Overlays and feedback",
+    "description": "Dialog and toast are useful consumer-side checks because they depend on portals, layering, transitions, and global styling.",
+    "notice": "Open the review dialog, then confirm it. You should see a styled modal, a dimmed overlay, and toast notifications that match the library design language.",
+    "openReviewDialog": "Open review dialog",
+    "triggerWarningToast": "Trigger warning toast",
+    "toasts": {
+      "reviewOpenedTitle": "Review dialog opened",
+      "reviewOpenedDescription": "Overlay, portal, and toast layers are now active in the consumer app.",
+      "successTitle": "Component package looks healthy",
+      "successDescription": "The smoke test confirms feedback primitives respond correctly.",
+      "warningTitle": "Manual feedback test",
+      "warningDescription": "This verifies standalone toast calls outside dialog interactions."
+    },
+    "dialog": {
+      "title": "External project dialog test",
+      "description": "If this modal opens with a styled backdrop and surfaced panel, the published overlay components are working correctly in this consumer application.",
+      "body": "This action simulates a QA sign-off flow using only the installed package components.",
+      "close": "Close",
+      "approve": "Approve package"
+    }
+  },
+  "shell": {
+    "brand": {
+      "eyebrow": "Navigation shell",
+      "title": "Header and sidebar smoke test",
+      "description": "This shell verifies the packaged navigation components alongside the rest of the UI library."
+    },
+    "header": {
+      "title": "Consumer app navigation",
+      "description": "Header chips, trigger, live clock, and current date all come from the published package.",
+      "status": "Library active"
+    },
+    "navigation": {
+      "label": "Page sections",
+      "items": {
+        "overview": "Overview",
+        "icons": "Icons",
+        "actions": "Actions",
+        "forms": "Forms",
+        "table": "Data table",
+        "feedback": "Feedback"
+      },
+      "short": {
+        "overview": "Home",
+        "icons": "Icon",
+        "actions": "Acts",
+        "forms": "Forms",
+        "table": "Table",
+        "feedback": "Feed"
+      }
+    },
+    "libraryTests": {
+      "label": "Navigation tests",
+      "header": "Header component",
+      "sidebar": "Sidebar component",
+      "i18n": "Locale synchronization",
+      "ready": "Ready",
+      "short": {
+        "header": "Head",
+        "sidebar": "Side",
+        "i18n": "Lang"
+      }
+    },
+    "language": {
+      "label": "Language switcher",
+      "description": "Switch the entire app language from here to verify RTL and LTR behavior inside the navigation shell.",
+      "options": {
+        "en": "English",
+        "ar": "Arabic"
+      },
+      "current": "Current: {{language}} | {{direction}}"
+    }
+  }
+}
