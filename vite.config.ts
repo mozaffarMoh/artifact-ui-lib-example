@@ -8,4 +8,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["@marn.bayan/moi-icons"],
   },
+  build: {
+    chunkSizeWarningLimit: 1500,
+  },
 });

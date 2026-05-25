@@ -6,11 +6,10 @@ import { AppShellSidebar } from "./components/AppShellSidebar";
 import { ButtonShowcase } from "./components/ButtonShowcase";
 import { FeedbackShowcase } from "./components/FeedbackShowcase";
 import { FormShowcase } from "./components/FormShowcase";
+import { IconLibraryTest } from "./components/IconLibraryTest";
 import { IntegrationChecklist } from "./components/IntegrationChecklist";
 import { SelectionShowcase } from "./components/SelectionShowcase";
 import { TableShowcase } from "./components/TableShowcase";
-import { MoiIcon } from "@marn.bayan/moi-icons/react";
-import { Text } from "@artifact/ui-lib";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -57,24 +56,8 @@ function App() {
                 <AppHero />
               </section>
 
-              <section id="icons" className="bg-secondary">
-                <Text variant="body1">Icons</Text>
-                <MoiIcon
-                  name="advertisiment"
-                  className="size-25"
-                  variant="Duotone"
-                  primaryColor="red"
-                  secondaryColor="blue"
-                />
-
-                <MoiIcon
-                  className="size-20"
-                  name="3d-rotate"
-                  variant="Duotone"
-                  shape="Rounded"
-                  primaryColor={"blue"}
-                  secondaryColor={"green"}
-                />
+              <section id="icons">
+                <IconLibraryTest />
               </section>
 
               <section id="actions" className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">

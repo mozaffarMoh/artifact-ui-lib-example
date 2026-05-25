@@ -32,6 +32,26 @@
       "rtl": "RTL"
     }
   },
+  "icons": {
+    "title": "Icon rendering test",
+    "description": "This section checks that the published icon package resolves correctly in the consumer app and that duotone styling still matches the surrounding design system.",
+    "status": "Icons live",
+    "examples": {
+      "home": {
+        "label": "Navigation home",
+        "description": "A neutral icon for testing crisp edges, dual-color fills, and balanced sizing on light surfaces."
+      },
+      "rotate": {
+        "label": "3D rotate",
+        "description": "Exercises the previously failing icon path and confirms the optimizer exclusion keeps module resolution stable."
+      },
+      "alert": {
+        "label": "Alert state",
+        "description": "Useful for checking contrast and emphasis when the icon sits inside a stronger accent treatment."
+      }
+    },
+    "note": "If these cards render with distinct duotone fills and no missing-module errors in development, the icon package is wired correctly."
+  },
   "buttons": {
     "title": "Buttons and emphasis states",
     "description": "This validates color tokens, variants, loading states, and tooltip composition.",
