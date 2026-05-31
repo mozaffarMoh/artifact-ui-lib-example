@@ -7,7 +7,7 @@ export function AppHero() {
 
   return (
     <section className="overflow-hidden rounded-[28px] border border-slate-200/70 bg-white/85 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur sm:p-8">
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
         <div className="max-w-2xl space-y-3">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
             {t("appHero.eyebrow")}

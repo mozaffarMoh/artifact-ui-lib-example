@@ -1,15 +1,10 @@
 import { useEffect } from "react";
 import { Header } from "@artifact/ui-lib/header";
+import { Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { AppHero } from "./components/AppHero";
 import { AppShellSidebar } from "./components/AppShellSidebar";
-import { ButtonShowcase } from "./components/ButtonShowcase";
-import { FeedbackShowcase } from "./components/FeedbackShowcase";
-import { FormShowcase } from "./components/FormShowcase";
-import { IconLibraryTest } from "./components/IconLibraryTest";
-import { IntegrationChecklist } from "./components/IntegrationChecklist";
-import { SelectionShowcase } from "./components/SelectionShowcase";
-import { TableShowcase } from "./components/TableShowcase";
+import { ChartsPage } from "./pages/ChartsPage";
+import { HomePage } from "./pages/HomePage";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -51,33 +46,10 @@ function App() {
               }
             />
 
-            <main className="flex flex-col gap-6">
-              <section id="overview">
-                <AppHero />
-              </section>
-
-              <section id="icons">
-                <IconLibraryTest />
-              </section>
-
-              <section id="actions" className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-                <ButtonShowcase />
-                <IntegrationChecklist />
-              </section>
-
-              <section id="forms" className="grid gap-6 lg:grid-cols-[1fr_0.95fr]">
-                <FormShowcase />
-                <SelectionShowcase />
-              </section>
-
-              <section id="table">
-                <TableShowcase />
-              </section>
-
-              <section id="feedback">
-                <FeedbackShowcase />
-              </section>
-            </main>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/charts" element={<ChartsPage />} />
+            </Routes>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { Button } from "@artifact/ui-lib/button";
 import { Sidebar, type SidebarItem } from "@artifact/ui-lib/sidebar";
 import {
   Blocks,
+  ChartColumn,
   Image,
   Languages,
   LayoutPanelTop,
@@ -14,6 +15,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate } from "react-router-dom";
 
 type AppShellSidebarProps = {
   direction: "ltr" | "rtl";
@@ -28,6 +30,7 @@ const sidebarIcons = {
   forms: SquarePen,
   table: Rows3,
   feedback: MessageSquareMore,
+  charts: ChartColumn,
   headerTest: PanelsTopLeft,
   sidebarTest: Blocks,
   tableTest: Languages,
@@ -38,9 +41,22 @@ export function AppShellSidebar({ direction }: AppShellSidebarProps) {
   const { t, i18n } = useTranslation();
   const language = i18n.resolvedLanguage === "ar" ? "ar" : "en";
   const [activeItemId, setActiveItemId] = useState<string>("overview");
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const scrollToSection = (sectionId: (typeof sectionIds)[number]) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const navigateToSection = (sectionId: (typeof sectionIds)[number]) => {
+    setActiveItemId(sectionId);
+
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: sectionId } });
+      return;
+    }
+
+    scrollToSection(sectionId);
   };
 
   const items: SidebarItem[] = [
@@ -52,22 +68,32 @@ export function AppShellSidebar({ direction }: AppShellSidebarProps) {
         const Icon = sidebarIcons[sectionId];
         return <Icon className="size-4" />;
       })(),
-      active: activeItemId === sectionId,
+      active: location.pathname === "/" && activeItemId === sectionId,
       onSelect: () => {
-        setActiveItemId(sectionId);
-        scrollToSection(sectionId);
+        navigateToSection(sectionId);
       },
     })),
+    {
+      id: "charts",
+      label: t("shell.navigation.items.charts"),
+      collapsedLabel: t("shell.navigation.short.charts"),
+      icon: <ChartColumn className="size-4" />,
+      active: location.pathname === "/charts",
+      onSelect: () => {
+        setActiveItemId("charts");
+        navigate("/charts");
+      },
+    },
     {
       id: "header-test",
       label: t("shell.libraryTests.header"),
       collapsedLabel: t("shell.libraryTests.short.header"),
       icon: <PanelsTopLeft className="size-4" />,
-      active: activeItemId === "header-test",
+      active: location.pathname === "/" && activeItemId === "header-test",
       badge: <ListChecks className="size-4" />,
       onSelect: () => {
         setActiveItemId("header-test");
-        scrollToSection("overview");
+        navigateToSection("overview");
       },
     },
     {
@@ -75,11 +101,11 @@ export function AppShellSidebar({ direction }: AppShellSidebarProps) {
       label: t("shell.libraryTests.sidebar"),
       collapsedLabel: t("shell.libraryTests.short.sidebar"),
       icon: <Blocks className="size-4" />,
-      active: activeItemId === "sidebar-test",
+      active: location.pathname === "/" && activeItemId === "sidebar-test",
       badge: <ListChecks className="size-4" />,
       onSelect: () => {
         setActiveItemId("sidebar-test");
-        scrollToSection("overview");
+        navigateToSection("overview");
       },
     },
     {
@@ -87,11 +113,11 @@ export function AppShellSidebar({ direction }: AppShellSidebarProps) {
       label: t("shell.libraryTests.i18n"),
       collapsedLabel: t("shell.libraryTests.short.i18n"),
       icon: <Languages className="size-4" />,
-      active: activeItemId === "table-test",
+      active: location.pathname === "/" && activeItemId === "table-test",
       badge: direction.toUpperCase(),
       onSelect: () => {
         setActiveItemId("table-test");
-        scrollToSection("table");
+        navigateToSection("table");
       },
     },
   ];

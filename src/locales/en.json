@@ -261,7 +261,8 @@
         "actions": "Actions",
         "forms": "Forms",
         "table": "Data table",
-        "feedback": "Feedback"
+        "feedback": "Feedback",
+        "charts": "Charts"
       },
       "short": {
         "overview": "Home",
@@ -269,7 +270,8 @@
         "actions": "Acts",
         "forms": "Forms",
         "table": "Table",
-        "feedback": "Feed"
+        "feedback": "Feed",
+        "charts": "Chart"
       }
     },
     "libraryTests": {
@@ -292,6 +294,29 @@
         "ar": "Arabic"
       },
       "current": "Current: {{language}} | {{direction}}"
+    }
+  },
+  "chartsPage": {
+    "eyebrow": "Chart playground",
+    "title": "Charts gallery",
+    "description": "This page isolates chart rendering so different chart variants can be reviewed from the sidebar with their own layout, legends, and titles.",
+    "cards": {
+      "bar": {
+        "title": "Bar chart",
+        "description": "Useful for comparing discrete values across categories."
+      },
+      "line": {
+        "title": "Line chart",
+        "description": "Shows how a metric changes over time."
+      },
+      "pie": {
+        "title": "Pie chart",
+        "description": "Highlights proportion across a small set of categories."
+      },
+      "doughnut": {
+        "title": "Doughnut chart",
+        "description": "A compact variation for status distribution and summaries."
+      }
     }
   }
 }
