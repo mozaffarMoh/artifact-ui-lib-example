@@ -114,6 +114,87 @@
     },
     "resetDate": "Reset date"
   },
+  "formBuilderExample": {
+    "title": "Form builder example",
+    "description": "A dedicated example showing typed fields, built-in validation, conditional rendering, sticky submit actions, and a live preview panel.",
+    "note": "Choose Platform or Operations to reveal an extra justification field. The form stays typed and validated through the builder config.",
+    "fields": {
+      "fullName": {
+        "label": "Full name",
+        "placeholder": "Amani Rahal"
+      },
+      "email": {
+        "label": "Work email",
+        "placeholder": "amani@example.com"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Create a password",
+        "helper": "Use at least 8 characters and include one number."
+      },
+      "confirmPassword": {
+        "label": "Confirm password",
+        "placeholder": "Repeat the password"
+      },
+      "team": {
+        "label": "Team",
+        "placeholder": "Choose a team"
+      },
+      "accessReason": {
+        "label": "Access reason",
+        "placeholder": "Explain why elevated access is needed for this request",
+        "helper": "Shown only for Platform and Operations requests."
+      },
+      "agree": {
+        "label": "I confirm this request follows the internal access policy"
+      }
+    },
+    "teams": {
+      "design": "Design systems",
+      "platform": "Platform engineering",
+      "qa": "QA and release",
+      "ops": "Operations"
+    },
+    "validation": {
+      "fullNameRequired": "Enter the requester name.",
+      "fullNameMin": "Use at least 3 characters.",
+      "emailRequired": "Enter a work email.",
+      "passwordRequired": "Create a password.",
+      "passwordMin": "Password must be at least 8 characters.",
+      "passwordDigit": "Password must include at least one number.",
+      "confirmRequired": "Repeat the password.",
+      "confirmMatch": "Passwords do not match.",
+      "teamRequired": "Choose a team.",
+      "accessReasonMin": "Provide at least 20 characters for elevated access requests.",
+      "agreeRequired": "You must confirm the internal access policy."
+    },
+    "actions": {
+      "title": "Ready to test form state",
+      "description": "Submit to trigger the builder validation flow or reset back to the initial values.",
+      "reset": "Reset",
+      "submit": "Submit request",
+      "submitting": "Submitting..."
+    },
+    "liveState": {
+      "title": "Live form state",
+      "name": "Name",
+      "email": "Email",
+      "team": "Team",
+      "reason": "Reason"
+    },
+    "lastSubmission": {
+      "title": "Last submission",
+      "empty": "Submit the form once to capture a validated payload preview here.",
+      "noReason": "No extra access reason provided"
+    },
+    "toast": {
+      "title": "Request submitted",
+      "description": "{{name}} submitted an access request for {{team}}."
+    },
+    "fallbacks": {
+      "empty": "Not provided"
+    }
+  },
   "selection": {
     "title": "Toggles and selection controls",
     "description": "This section stresses checkbox, switch, radio, and slider behavior with live state updates.",

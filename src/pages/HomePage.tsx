@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { AppHero } from "../components/AppHero";
 import { ButtonShowcase } from "../components/ButtonShowcase";
 import { FeedbackShowcase } from "../components/FeedbackShowcase";
+import { FormBuilderShowcase } from "../components/FormBuilderShowcase.tsx";
 import { FormShowcase } from "../components/FormShowcase";
 import { IconLibraryTest } from "../components/IconLibraryTest";
 import { IntegrationChecklist } from "../components/IntegrationChecklist";
@@ -42,6 +43,10 @@ export function HomePage() {
       <section id="forms" className="grid gap-6 lg:grid-cols-[1fr_0.95fr]">
         <FormShowcase />
         <SelectionShowcase />
+      </section>
+
+      <section id="form-builder">
+        <FormBuilderShowcase />
       </section>
 
       <section id="table">
