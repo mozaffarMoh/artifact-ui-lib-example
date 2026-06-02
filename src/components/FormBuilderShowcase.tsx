@@ -170,7 +170,7 @@ export function FormBuilderShowcase() {
             gap={5}
             dir={direction}
             showErrorSummary
-            stickySubmit={{ position: "bottom", showProgress: true }}
+            //stickySubmit={{ position: "top", showProgress: true }}
             onSubmit={async (submitted) => {
               setSubmittedValues(submitted);
               toast.success({
