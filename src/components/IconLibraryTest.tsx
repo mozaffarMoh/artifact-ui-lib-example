@@ -11,7 +11,7 @@ const iconExamples: Array<{
 }> = [
   {
     key: "home",
-    name: "home-04",
+    name: "lock",
     primaryColor: "#0f172a",
     secondaryColor: "#14b8a6",
     panelClassName:
