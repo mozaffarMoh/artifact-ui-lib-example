@@ -390,6 +390,10 @@
         "title": "Line chart",
         "description": "Shows how a metric changes over time."
       },
+      "area": {
+        "title": "Area chart",
+        "description": "Adds filled trend layers to compare volume over time."
+      },
       "pie": {
         "title": "Pie chart",
         "description": "Highlights proportion across a small set of categories."
@@ -397,6 +401,14 @@
       "doughnut": {
         "title": "Doughnut chart",
         "description": "A compact variation for status distribution and summaries."
+      },
+      "radar": {
+        "title": "Radar chart",
+        "description": "Compares several dimensions against the same radial scale."
+      },
+      "polarArea": {
+        "title": "Polar area chart",
+        "description": "Shows magnitude by segment with equal angles and radial depth."
       }
     }
   }

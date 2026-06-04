@@ -1,5 +1,64 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary-lighter: #ddfff9;
+  --color-primary-light: #527f77;
+  --color-primary-main: #1b4139;
+  --color-primary-dark: #002623;
+
+  --color-secondary-light: #edebe1;
+  --color-secondary-main: #b6a87e;
+  --color-secondary-dark: #958665;
+
+  --color-umber-light: #ffdcdf;
+  --color-umber-main: #44191f;
+  --color-umber-dark: #231014;
+
+  --color-success-lighter: #f0fff8;
+  --color-success-light: #8cf5c6;
+  --color-success-main: #33bd7f;
+  --color-success-dark: #1e9a63;
+  --color-success-darker: #104d32;
+
+  --color-warning-lighter: #fff6e4;
+  --color-warning-light: #ffdd9a;
+  --color-warning-main: #d29e36;
+  --color-warning-dark: #b18121;
+  --color-warning-darker: #7c5914;
+
+  --color-error-lighter: #ffe5e8;
+  --color-error-light: #ffa4af;
+  --color-error-main: #cc2f41;
+  --color-error-dark: #a71829;
+  --color-error-darker: #6b0d18;
+
+  --color-info-lighter: #e5f1ff;
+  --color-info-light: #8fc2ff;
+  --color-info-main: #3473c0;
+  --color-info-dark: #1757a4;
+  --color-info-darker: #12345d;
+
+  --color-stone-lighter: #f0eff0;
+  --color-stone-light: #ededed;
+  --color-stone-main: #969696;
+  --color-stone-dark: #747474;
+  --color-stone-darker: #171717;
+
+  --color-white: #ffffff;
+  --color-disabled: #b8b8b8;
+
+  --color-primary: var(--color-primary-main);
+  --color-secondary: var(--color-secondary-main);
+  --color-error: var(--color-error-main);
+  --color-success: var(--color-success-main);
+  --color-warning: var(--color-warning-main);
+  --color-info: var(--color-info-main);
+  --color-stone: var(--color-stone-main);
+
+  --color-light: var(--color-stone-lighter);
+  --color-dark: var(--color-stone-darker);
+}
+
 :root {
   font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
   line-height: 1.5;

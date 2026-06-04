@@ -1,9 +1,7 @@
-import type { ChartData, ChartOptions } from "chart.js";
-import { Pie } from "react-chartjs-2";
-import "./chartSetup";
+import { Chart, type ChartProps } from "@artifact/ui-lib";
 
 function PieChart() {
-  const data: ChartData<"pie", number[], string> = {
+  const data: ChartProps["data"] = {
     labels: ["Design", "Platform", "QA", "Operations"],
     datasets: [
       {
@@ -21,20 +19,26 @@ function PieChart() {
     ],
   };
 
-  const options: ChartOptions<"pie"> = {
+  const options: ChartProps["options"] = {
     responsive: true,
     plugins: {
       legend: {
         position: "bottom",
       },
-      title: {
-        display: true,
-        text: "Team Distribution",
-      },
     },
   };
 
-  return <Pie data={data} options={options} />;
+  return (
+    <Chart
+      data={data}
+      density="spacious"
+      emphasis="subtle"
+      height={240}
+      legendPosition="bottom"
+      options={options}
+      shape="pie"
+    />
+  );
 }
 
 export default PieChart;

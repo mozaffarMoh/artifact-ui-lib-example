@@ -1,16 +1,24 @@
 import { Chart, type ChartProps } from "@artifact/ui-lib";
 
-function LineChart() {
+function AreaChart() {
   const data: ChartProps["data"] = {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
     datasets: [
       {
-        label: "Revenue",
-        data: [180, 440, 260, 100, 360, 410],
-        borderColor: "rgb(16, 185, 129)",
-        backgroundColor: "rgba(16, 185, 129, 0.18)",
-        tension: 0.35,
+        label: "Applications",
+        data: [32, 45, 41, 58, 63, 69],
+        borderColor: "#1b4139",
+        backgroundColor: "rgba(27, 65, 57, 0.16)",
         fill: true,
+        tension: 0.35,
+      },
+      {
+        label: "Completed",
+        data: [18, 27, 29, 39, 44, 51],
+        borderColor: "#b6a87e",
+        backgroundColor: "rgba(182, 168, 126, 0.22)",
+        fill: true,
+        tension: 0.35,
       },
     ],
   };
@@ -19,7 +27,7 @@ function LineChart() {
     responsive: true,
     plugins: {
       legend: {
-        position: "top",
+        position: "bottom",
       },
     },
     scales: {
@@ -43,11 +51,11 @@ function LineChart() {
       density="comfortable"
       emphasis="strong"
       height={240}
-      legendPosition="top"
+      legendPosition="bottom"
       options={options}
-      shape="line"
+      shape="area"
     />
   );
 }
 
-export default LineChart;
+export default AreaChart;

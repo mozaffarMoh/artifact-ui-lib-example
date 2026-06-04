@@ -1,28 +1,12 @@
+import AreaChart from "../components/charts/AreaChart";
 import { useTranslation } from "react-i18next";
 import BarChart from "../components/charts/BarChart";
 import DoughnutChart from "../components/charts/DoughnutChart";
 import LineChart from "../components/charts/LineChart";
+import PolarAreaChart from "../components/charts/PolarAreaChart";
 import PieChart from "../components/charts/PieChart";
-
-function ChartCard({
-  title,
-  description,
-  children,
-}: {
-  title: string;
-  description: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <section className="rounded-[28px] border border-slate-200/80 bg-white/90 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl sm:p-6">
-      <div className="mb-5">
-        <h2 className="text-lg font-semibold text-slate-950">{title}</h2>
-        <p className="mt-1 text-sm text-slate-500">{description}</p>
-      </div>
-      <div className="h-80">{children}</div>
-    </section>
-  );
-}
+import RadarChart from "../components/charts/RadarChart";
+import ChartCard from "../components/charts/ChartCard";
 
 export function ChartsPage() {
   const { t } = useTranslation();
@@ -53,6 +37,13 @@ export function ChartsPage() {
         </ChartCard>
 
         <ChartCard
+          title={t("chartsPage.cards.area.title")}
+          description={t("chartsPage.cards.area.description")}
+        >
+          <AreaChart />
+        </ChartCard>
+
+        <ChartCard
           title={t("chartsPage.cards.pie.title")}
           description={t("chartsPage.cards.pie.description")}
         >
@@ -64,6 +55,20 @@ export function ChartsPage() {
           description={t("chartsPage.cards.doughnut.description")}
         >
           <DoughnutChart />
+        </ChartCard>
+
+        <ChartCard
+          title={t("chartsPage.cards.radar.title")}
+          description={t("chartsPage.cards.radar.description")}
+        >
+          <RadarChart />
+        </ChartCard>
+
+        <ChartCard
+          title={t("chartsPage.cards.polarArea.title")}
+          description={t("chartsPage.cards.polarArea.description")}
+        >
+          <PolarAreaChart />
         </ChartCard>
       </section>
     </main>

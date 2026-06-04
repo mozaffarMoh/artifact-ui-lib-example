@@ -1,33 +1,64 @@
-import type { ChartData, ChartOptions } from "chart.js";
-import { Bar } from "react-chartjs-2";
-import "./chartSetup";
+import { Chart, type ChartProps } from "@artifact/ui-lib";
 
 function BarChart() {
-  const data: ChartData<"bar", number[], string> = {
-    labels: ["January", "February", "March", "April"],
+  const data: ChartProps["data"] = {
+    labels: [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ],
     datasets: [
       {
         label: "Sales",
-        data: [120, 190, 300, 250],
-        backgroundColor: "rgba(75, 192, 192, 0.5)",
+        data: [120, 190, 300, 250, 120, 190, 300, 250, 120, 190, 300, 250],
+        backgroundColor: "#33bd7f",
+        borderRadius: 6,
       },
     ],
   };
 
-  const options: ChartOptions<"bar"> = {
+  const options: ChartProps["options"] = {
     responsive: true,
     plugins: {
       legend: {
         position: "top",
       },
-      title: {
-        display: true,
-        text: "Monthly Sales",
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: {
+          color: "rgba(148, 163, 184, 0.18)",
+        },
+      },
+      x: {
+        grid: {
+          display: false,
+        },
       },
     },
   };
 
-  return <Bar data={data} options={options} />;
+  return (
+    <Chart
+      data={data}
+      density="compact"
+      emphasis="subtle"
+      height={240}
+      legendPosition="top"
+      options={options}
+      shape="bar"
+    />
+  );
 }
 
 export default BarChart;

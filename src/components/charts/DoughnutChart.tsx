@@ -1,9 +1,7 @@
-import type { ChartData, ChartOptions } from "chart.js";
-import { Doughnut } from "react-chartjs-2";
-import "./chartSetup";
+import { Chart, type ChartProps } from "@artifact/ui-lib";
 
 function DoughnutChart() {
-  const data: ChartData<"doughnut", number[], string> = {
+  const data: ChartProps["data"] = {
     labels: ["Completed", "In Review", "Blocked"],
     datasets: [
       {
@@ -15,20 +13,27 @@ function DoughnutChart() {
     ],
   };
 
-  const options: ChartOptions<"doughnut"> = {
+  const options: ChartProps["options"] = {
     responsive: true,
     plugins: {
       legend: {
         position: "bottom",
       },
-      title: {
-        display: true,
-        text: "Delivery Status",
-      },
     },
+    cutout: "62%",
   };
 
-  return <Doughnut data={data} options={options} />;
+  return (
+    <Chart
+      data={data}
+      density="comfortable"
+      emphasis="strong"
+      height={240}
+      legendPosition="bottom"
+      options={options}
+      shape="doughnut"
+    />
+  );
 }
 
 export default DoughnutChart;
