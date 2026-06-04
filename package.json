@@ -10,8 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@artifact/ui-lib": "file:artifact-ui-lib-1.1.2.tgz",
-    "@marn.bayan/moi-icons": "^0.1.15",
+    "@artifact/ui-lib": "file:artifact-ui-lib-1.2.1.tgz",
     "@tailwindcss/vite": "^4.3.0",
     "chart.js": "^4.5.1",
     "i18next": "^26.2.0",

@@ -12,7 +12,8 @@ import {
   useFormBuilder,
 } from "@artifact/ui-lib/form-builder";
 import { Toaster, toast } from "@artifact/ui-lib/toast";
-import { Lock, Mail, ShieldCheck, UserRound } from "lucide-react";
+import { Lock, Mail, ShieldCheck } from "lucide-react";
+import AiBookIcon from "@artifact/moi-icons/react/ai-search";
 import { useTranslation } from "react-i18next";
 
 type SignupForm = {
@@ -58,7 +59,8 @@ export function FormBuilderShowcase() {
       name: "fullName",
       label: t("formBuilderExample.fields.fullName.label"),
       placeholder: t("formBuilderExample.fields.fullName.placeholder"),
-      icon: <UserRound className="size-4" />,
+
+      startAdornment: <AiBookIcon variant="Bulk" />,
       required: true,
       validation: {
         required: t("formBuilderExample.validation.fullNameRequired"),

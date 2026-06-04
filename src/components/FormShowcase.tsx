@@ -60,7 +60,7 @@ export function FormShowcase() {
             value={team}
             onValueChange={setTeam}
             placeholder={t("form.teamPlaceholder")}
-            searchable
+            searchable={false}
             clearable
           />
           <div className="space-y-2">

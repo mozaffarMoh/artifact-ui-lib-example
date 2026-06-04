@@ -1,11 +1,10 @@
-import type { IconName } from "@marn.bayan/moi-icons";
-import { MoiIcon } from "@marn.bayan/moi-icons/react";
+import { MoiIcon } from "@artifact/moi-icons/react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@artifact/ui-lib/card";
 import { useTranslation } from "react-i18next";
 
 const iconExamples: Array<{
   key: "home" | "rotate" | "alert";
-  name: IconName;
+  name: any;
   primaryColor: string;
   secondaryColor: string;
   panelClassName: string;
