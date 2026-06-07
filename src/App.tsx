@@ -1,15 +1,52 @@
 import { useEffect } from "react";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@artifact/ui-lib";
 import { Header } from "@artifact/ui-lib/header";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { AppShellSidebar } from "./components/AppShellSidebar";
 import { ChartsPage } from "./pages/ChartsPage";
 import { HomePage } from "./pages/HomePage";
+import { OtherTestsPage } from "./pages/OtherTestsPage.tsx";
 
 function App() {
   const { t, i18n } = useTranslation();
+  const location = useLocation();
   const language = i18n.resolvedLanguage === "ar" ? "ar" : "en";
   const direction = i18n.dir(language) as "ltr" | "rtl";
+
+  const breadcrumbItems =
+    location.pathname === "/charts"
+      ? [
+          {
+            href: "/",
+            label: t("shell.navigation.items.overview"),
+          },
+          {
+            label: t("shell.navigation.items.charts"),
+          },
+        ]
+      : location.pathname === "/other-tests"
+        ? [
+            {
+              href: "/",
+              label: t("shell.navigation.items.overview"),
+            },
+            {
+              label: t("shell.navigation.items.otherTests"),
+            },
+          ]
+        : [
+            {
+              label: t("shell.navigation.items.overview"),
+            },
+          ];
 
   useEffect(() => {
     document.documentElement.lang = language;
@@ -46,9 +83,33 @@ function App() {
               }
             />
 
+            <div className="rounded-3xl border border-slate-200/80 bg-white/75 px-5 py-4 shadow-[0_16px_40px_rgba(15,23,42,0.04)] backdrop-blur-xl">
+              <Breadcrumb>
+                <BreadcrumbList>
+                  {breadcrumbItems.map((item, index) => {
+                    const isLast = index === breadcrumbItems.length - 1;
+
+                    return (
+                      <BreadcrumbItem key={`${item.label}-${index}`}>
+                        {item.href && !isLast ? (
+                          <BreadcrumbLink asChild>
+                            <Link to={item.href}>{item.label}</Link>
+                          </BreadcrumbLink>
+                        ) : (
+                          <BreadcrumbPage>{item.label}</BreadcrumbPage>
+                        )}
+                        {!isLast ? <BreadcrumbSeparator /> : null}
+                      </BreadcrumbItem>
+                    );
+                  })}
+                </BreadcrumbList>
+              </Breadcrumb>
+            </div>
+
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/charts" element={<ChartsPage />} />
+              <Route path="/other-tests" element={<OtherTestsPage />} />
             </Routes>
           </div>
         </div>

@@ -343,7 +343,8 @@
         "forms": "Forms",
         "table": "Data table",
         "feedback": "Feedback",
-        "charts": "Charts"
+        "charts": "Charts",
+        "otherTests": "Other tests"
       },
       "short": {
         "overview": "Home",
@@ -352,7 +353,8 @@
         "forms": "Forms",
         "table": "Table",
         "feedback": "Feed",
-        "charts": "Chart"
+        "charts": "Chart",
+        "otherTests": "Tests"
       }
     },
     "libraryTests": {
@@ -409,6 +411,57 @@
       "polarArea": {
         "title": "Polar area chart",
         "description": "Shows magnitude by segment with equal angles and radial depth."
+      }
+    }
+  },
+  "otherTestsPage": {
+    "eyebrow": "Component checks",
+    "title": "Other tests",
+    "description": "This page isolates breadcrumb and tabs so both components can be reviewed from the sidebar without mixing them into the home showcase sections.",
+    "breadcrumb": {
+      "eyebrow": "Breadcrumb test",
+      "title": "Breadcrumb navigation",
+      "description": "Use this example to verify separators, current-page styling, and router-backed links inside the consumer app.",
+      "items": {
+        "home": "Home",
+        "charts": "Charts",
+        "current": "Other tests"
+      },
+      "checks": {
+        "structureLabel": "Structure",
+        "structureValue": "Three breadcrumb levels with a current-page state.",
+        "routingLabel": "Routing",
+        "routingValue": "The earlier items navigate with React Router links."
+      }
+    },
+    "tabs": {
+      "eyebrow": "Tabs test",
+      "title": "Tabs behavior",
+      "description": "This sample checks tab switching, active-state visuals, and mixed trigger variants on one page.",
+      "items": {
+        "overview": {
+          "label": "Overview",
+          "title": "Default tab state",
+          "description": "The first panel confirms the base tab style, spacing, and content container rendering."
+        },
+        "states": {
+          "label": "States",
+          "cards": {
+            "focus": {
+              "title": "Focus and hover",
+              "description": "Move through the triggers with pointer and keyboard input to confirm visible state changes."
+            },
+            "direction": {
+              "title": "Direction aware",
+              "description": "Switch the app language from the sidebar to verify the tab list still aligns and reads correctly in RTL."
+            }
+          }
+        },
+        "notes": {
+          "label": "Notes",
+          "title": "What this page verifies",
+          "description": "Breadcrumb and tabs now have a dedicated route, so they can be tested independently from the home page sections."
+        }
       }
     }
   }

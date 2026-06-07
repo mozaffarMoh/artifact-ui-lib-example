@@ -4,12 +4,9 @@ import {
   Blocks,
   ChartColumn,
   Image,
-  Languages,
   LayoutPanelTop,
-  ListChecks,
   MessageSquareMore,
   MousePointerClick,
-  PanelsTopLeft,
   Rows3,
   SquarePen,
 } from "lucide-react";
@@ -31,10 +28,7 @@ const sidebarIcons = {
   table: Rows3,
   feedback: MessageSquareMore,
   charts: ChartColumn,
-  headerTest: PanelsTopLeft,
-  sidebarTest: Blocks,
-  tableTest: Languages,
-  ready: ListChecks,
+  otherTests: Blocks,
 } as const;
 
 export function AppShellSidebar({ direction }: AppShellSidebarProps) {
@@ -85,39 +79,14 @@ export function AppShellSidebar({ direction }: AppShellSidebarProps) {
       },
     },
     {
-      id: "header-test",
-      label: t("shell.libraryTests.header"),
-      collapsedLabel: t("shell.libraryTests.short.header"),
-      icon: <PanelsTopLeft className="size-4" />,
-      active: location.pathname === "/" && activeItemId === "header-test",
-      badge: <ListChecks className="size-4" />,
-      onSelect: () => {
-        setActiveItemId("header-test");
-        navigateToSection("overview");
-      },
-    },
-    {
-      id: "sidebar-test",
-      label: t("shell.libraryTests.sidebar"),
-      collapsedLabel: t("shell.libraryTests.short.sidebar"),
+      id: "other-tests",
+      label: t("shell.navigation.items.otherTests"),
+      collapsedLabel: t("shell.navigation.short.otherTests"),
       icon: <Blocks className="size-4" />,
-      active: location.pathname === "/" && activeItemId === "sidebar-test",
-      badge: <ListChecks className="size-4" />,
+      active: location.pathname === "/other-tests",
       onSelect: () => {
-        setActiveItemId("sidebar-test");
-        navigateToSection("overview");
-      },
-    },
-    {
-      id: "table-test",
-      label: t("shell.libraryTests.i18n"),
-      collapsedLabel: t("shell.libraryTests.short.i18n"),
-      icon: <Languages className="size-4" />,
-      active: location.pathname === "/" && activeItemId === "table-test",
-      badge: direction.toUpperCase(),
-      onSelect: () => {
-        setActiveItemId("table-test");
-        navigateToSection("table");
+        setActiveItemId("other-tests");
+        navigate("/other-tests");
       },
     },
   ];
