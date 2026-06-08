@@ -20,8 +20,12 @@ function BarChart() {
       {
         label: "Sales",
         data: [120, 190, 300, 250, 120, 190, 300, 250, 120, 190, 300, 250],
-        backgroundColor: "#33bd7f",
-        borderRadius: 6,
+        borderRadius: 4,
+      },
+      {
+        label: "Sales",
+        data: [12, 250, 120, 190, 300, 250, 20, 66, 54, 11],
+        borderRadius: 4,
       },
     ],
   };

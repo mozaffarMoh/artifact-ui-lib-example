@@ -7,8 +7,18 @@ function LineChart() {
       {
         label: "Revenue",
         data: [180, 440, 260, 100, 360, 410],
-        borderColor: "rgb(16, 185, 129)",
-        backgroundColor: "rgba(16, 185, 129, 0.18)",
+        tension: 0.35,
+        fill: true,
+      },
+      {
+        label: "Loss",
+        data: [1, 360, 410, 200, 100, 410],
+        tension: 0.35,
+        fill: true,
+      },
+      {
+        label: "Profit",
+        data: [1, 8, 410, 200, 100, 410],
         tension: 0.35,
         fill: true,
       },
