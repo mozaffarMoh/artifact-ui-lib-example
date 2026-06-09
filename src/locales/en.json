@@ -411,6 +411,80 @@
       "polarArea": {
         "title": "Polar area chart",
         "description": "Shows magnitude by segment with equal angles and radial depth."
+      },
+      "gauge": {
+        "title": "Gauge chart",
+        "description": "Shows progress toward a single target with a centered summary."
+      },
+      "semiGauge": {
+        "title": "Semi-gauge chart",
+        "description": "Uses a half arc to highlight completion in a compact dashboard view."
+      },
+      "statisticsCard": {
+        "title": "StatisticsCard",
+        "description": "A compact KPI surface for key numbers, trend badges, and supporting context."
+      },
+      "progress": {
+        "title": "Progress",
+        "description": "A ranked progress list for comparing milestones against a shared target."
+      }
+    },
+    "examples": {
+      "gauge": {
+        "centerLabel": "SLA",
+        "centerValue": "86%",
+        "centerDescription": "Achieved this month",
+        "segments": {
+          "achieved": "Achieved",
+          "remaining": "Remaining"
+        }
+      },
+      "semiGauge": {
+        "centerLabel": "Rollout",
+        "centerValue": "64%",
+        "centerDescription": "Migration complete",
+        "segments": {
+          "completed": "Completed",
+          "remaining": "Remaining"
+        }
+      },
+      "statistics": {
+        "revenue": {
+          "title": "Monthly revenue",
+          "value": "$248K",
+          "description": "Closed revenue across all active accounts.",
+          "trend": "+18.2%"
+        },
+        "conversion": {
+          "title": "Trial conversion",
+          "value": "34.6%",
+          "description": "Share of trials upgraded in the last 30 days.",
+          "trend": "+4.1 pts"
+        },
+        "reliability": {
+          "title": "Service reliability",
+          "value": "99.94%",
+          "description": "Measured uptime against the current availability target.",
+          "trend": "On track"
+        }
+      },
+      "progress": {
+        "title": "Quarterly delivery",
+        "description": "Snapshot of team execution against the current quarter target.",
+        "items": {
+          "designSystem": {
+            "label": "Design system",
+            "value": "78%"
+          },
+          "platform": {
+            "label": "Platform rollout",
+            "value": "64%"
+          },
+          "qa": {
+            "label": "QA automation",
+            "value": "89%"
+          }
+        }
       }
     }
   },

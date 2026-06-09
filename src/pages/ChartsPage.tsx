@@ -2,10 +2,14 @@ import AreaChart from "../components/charts/AreaChart";
 import { useTranslation } from "react-i18next";
 import BarChart from "../components/charts/BarChart";
 import DoughnutChart from "../components/charts/DoughnutChart";
+import GaugeChart from "../components/charts/GaugeChart";
 import LineChart from "../components/charts/LineChart";
 import PolarAreaChart from "../components/charts/PolarAreaChart";
 import PieChart from "../components/charts/PieChart";
+import ProgressShowcase from "../components/charts/ProgressShowcase";
 import RadarChart from "../components/charts/RadarChart";
+import SemiGaugeChart from "../components/charts/SemiGaugeChart";
+import StatisticsCardShowcase from "../components/charts/StatisticsCardShowcase";
 import ChartCard from "../components/charts/ChartCard";
 
 export function ChartsPage() {
@@ -69,6 +73,34 @@ export function ChartsPage() {
           description={t("chartsPage.cards.polarArea.description")}
         >
           <PolarAreaChart />
+        </ChartCard>
+
+        <ChartCard
+          title={t("chartsPage.cards.gauge.title")}
+          description={t("chartsPage.cards.gauge.description")}
+        >
+          <GaugeChart />
+        </ChartCard>
+
+        <ChartCard
+          title={t("chartsPage.cards.semiGauge.title")}
+          description={t("chartsPage.cards.semiGauge.description")}
+        >
+          <SemiGaugeChart />
+        </ChartCard>
+
+        <ChartCard
+          title={t("chartsPage.cards.statisticsCard.title")}
+          description={t("chartsPage.cards.statisticsCard.description")}
+        >
+          <StatisticsCardShowcase />
+        </ChartCard>
+
+        <ChartCard
+          title={t("chartsPage.cards.progress.title")}
+          description={t("chartsPage.cards.progress.description")}
+        >
+          <ProgressShowcase />
         </ChartCard>
       </section>
     </main>

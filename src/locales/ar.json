@@ -411,6 +411,80 @@
       "polarArea": {
         "title": "مخطط منطقة قطبية",
         "description": "يعرض الحجم حسب القطاع بزوايا متساوية وعمق شعاعي."
+      },
+      "gauge": {
+        "title": "مخطط مؤشر",
+        "description": "يعرض التقدم نحو هدف واحد مع ملخص مركزي واضح."
+      },
+      "semiGauge": {
+        "title": "مخطط مؤشر نصف دائري",
+        "description": "يستخدم قوسًا نصف دائري لإبراز مستوى الإنجاز داخل لوحة مدمجة."
+      },
+      "statisticsCard": {
+        "title": "StatisticsCard",
+        "description": "بطاقة مختصرة لعرض مؤشرات الأداء مع شارة الاتجاه وسياق إضافي."
+      },
+      "progress": {
+        "title": "Progress",
+        "description": "قائمة تقدم مرتبة لمقارنة المعالم مقابل هدف مشترك."
+      }
+    },
+    "examples": {
+      "gauge": {
+        "centerLabel": "الالتزام",
+        "centerValue": "86%",
+        "centerDescription": "تم تحقيقه هذا الشهر",
+        "segments": {
+          "achieved": "تم تحقيقه",
+          "remaining": "المتبقي"
+        }
+      },
+      "semiGauge": {
+        "centerLabel": "الإطلاق",
+        "centerValue": "64%",
+        "centerDescription": "اكتملت الهجرة",
+        "segments": {
+          "completed": "مكتمل",
+          "remaining": "المتبقي"
+        }
+      },
+      "statistics": {
+        "revenue": {
+          "title": "الإيراد الشهري",
+          "value": "$248K",
+          "description": "الإيرادات المغلقة عبر جميع الحسابات النشطة.",
+          "trend": "+18.2%"
+        },
+        "conversion": {
+          "title": "تحويل التجربة",
+          "value": "34.6%",
+          "description": "نسبة التجارب التي تمت ترقيتها خلال آخر 30 يومًا.",
+          "trend": "+4.1 نقطة"
+        },
+        "reliability": {
+          "title": "موثوقية الخدمة",
+          "value": "99.94%",
+          "description": "زمن التشغيل المقاس مقابل هدف التوفر الحالي.",
+          "trend": "ضمن المسار"
+        }
+      },
+      "progress": {
+        "title": "تسليم الربع الحالي",
+        "description": "لقطة سريعة لتنفيذ الفرق مقابل هدف الربع الحالي.",
+        "items": {
+          "designSystem": {
+            "label": "نظام التصميم",
+            "value": "78%"
+          },
+          "platform": {
+            "label": "إطلاق المنصة",
+            "value": "64%"
+          },
+          "qa": {
+            "label": "أتمتة الجودة",
+            "value": "89%"
+          }
+        }
       }
     }
   },
