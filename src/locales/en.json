@@ -537,6 +537,54 @@
           "description": "Breadcrumb and tabs now have a dedicated route, so they can be tested independently from the home page sections."
         }
       }
+    },
+    "status": {
+      "eyebrow": "Status test",
+      "title": "Status tones",
+      "description": "This section checks the new Status component across the main semantic tones and larger badge sizing.",
+      "items": {
+        "ready": "Ready",
+        "review": "In review",
+        "queued": "Queued",
+        "blocked": "Blocked"
+      },
+      "notes": {
+        "hierarchyTitle": "Hierarchy and scale",
+        "hierarchyDescription": "The larger size should still feel compact while keeping icon and label spacing balanced.",
+        "toneTitle": "Tone contrast",
+        "toneDescription": "Each tone should remain distinct on light surfaces without drifting into button-like emphasis."
+      }
+    },
+    "skeleton": {
+      "eyebrow": "Skeleton test",
+      "title": "Skeleton loading states",
+      "description": "This layout mixes text, block, and circle skeletons so spacing, radius, and animation can be reviewed together.",
+      "note": "The final block is intentionally static to confirm the non-animated state still matches the same visual system."
+    },
+    "tooltip": {
+      "eyebrow": "Tooltip test",
+      "title": "Updated tooltip design",
+      "description": "These samples verify the refreshed tooltip surface, motion, arrow handling, and notch behavior in one place.",
+      "trigger": "Hover me",
+      "cards": {
+        "default": {
+          "title": "Default notch",
+          "description": "Tests the default tooltip styling with the new floating surface and built-in notch.",
+          "content": "Default tooltip with the updated compact dark treatment."
+        },
+        "arrow": {
+          "title": "Arrow mode",
+          "description": "Uses the explicit arrow variant to confirm the alternative pointer style still aligns correctly.",
+          "content": "Arrow-enabled tooltip without the notch."
+        },
+        "rich": {
+          "title": "Rich content",
+          "description": "Exercises multi-line content and a different placement so the layout stays readable.",
+          "trigger": "View details",
+          "contentTitle": "Deployment insights",
+          "contentBody": "Latency is within target, but one region is still warming caches after rollout."
+        }
+      }
     }
   }
 }

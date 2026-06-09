@@ -1,8 +1,25 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@artifact/ui-lib";
+import {
+  Button,
+  Skeleton,
+  Status,
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+  Tooltip,
+} from "@artifact/ui-lib";
+import { Activity, CircleAlert, Clock3, Info, Layers3 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export function OtherTestsPage() {
   const { t } = useTranslation();
+
+  const statusItems = [
+    { key: "ready", tone: "success" as const, icon: <Activity className="size-4" /> },
+    { key: "review", tone: "info" as const, icon: <Info className="size-4" /> },
+    { key: "queued", tone: "warning" as const, icon: <Clock3 className="size-4" /> },
+    { key: "blocked", tone: "error" as const, icon: <CircleAlert className="size-4" /> },
+  ];
 
   return (
     <main className="flex flex-col gap-6">
@@ -80,6 +97,156 @@ export function OtherTestsPage() {
               </div>
             </TabsContent>
           </Tabs>
+        </article>
+      </section>
+
+      <section className="grid gap-6 xl:grid-cols-2">
+        <article className="rounded-[28px] border border-slate-200/80 bg-white/88 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
+            {t("otherTestsPage.status.eyebrow")}
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
+            {t("otherTestsPage.status.title")}
+          </h2>
+          <p className="mt-3 text-sm leading-6 text-slate-600">{t("otherTestsPage.status.description")}</p>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            {statusItems.map(({ key, tone, icon }) => (
+              <Status key={key} tone={tone} size="lg" className="inline-flex items-center gap-2">
+                {icon}
+                {t(`otherTestsPage.status.items.${key}`)}
+              </Status>
+            ))}
+          </div>
+
+          <div className="mt-6 grid gap-4 rounded-3xl border border-slate-200 bg-slate-50/80 p-5 sm:grid-cols-2">
+            <div>
+              <p className="text-sm font-semibold text-slate-950">
+                {t("otherTestsPage.status.notes.hierarchyTitle")}
+              </p>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                {t("otherTestsPage.status.notes.hierarchyDescription")}
+              </p>
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-slate-950">
+                {t("otherTestsPage.status.notes.toneTitle")}
+              </p>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                {t("otherTestsPage.status.notes.toneDescription")}
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article className="rounded-[28px] border border-slate-200/80 bg-white/88 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-700">
+            {t("otherTestsPage.skeleton.eyebrow")}
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
+            {t("otherTestsPage.skeleton.title")}
+          </h2>
+          <p className="mt-3 text-sm leading-6 text-slate-600">{t("otherTestsPage.skeleton.description")}</p>
+
+          <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50/80 p-5">
+            <div className="flex items-start gap-4">
+              <Skeleton variant="circle" size="xl" width={56} height={56} />
+              <div className="min-w-0 flex-1 space-y-3">
+                <Skeleton variant="text" size="lg" width="42%" />
+                <Skeleton count={3} lastLineWidth="68%" variant="text" size="sm" />
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              <Skeleton variant="block" size="md" height={88} className="rounded-2xl" />
+              <Skeleton variant="block" size="md" height={88} className="rounded-2xl" />
+              <Skeleton variant="block" size="md" height={88} className="rounded-2xl" animated={false} />
+            </div>
+          </div>
+
+          <p className="mt-4 text-sm leading-6 text-slate-600">{t("otherTestsPage.skeleton.note")}</p>
+        </article>
+
+        <article className="rounded-[28px] border border-slate-200/80 bg-white/88 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl xl:col-span-2">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-violet-700">
+            {t("otherTestsPage.tooltip.eyebrow")}
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
+            {t("otherTestsPage.tooltip.title")}
+          </h2>
+          <p className="mt-3 text-sm leading-6 text-slate-600">{t("otherTestsPage.tooltip.description")}</p>
+
+          <div className="mt-6 grid gap-4 lg:grid-cols-3">
+            <div className="rounded-3xl border border-slate-200 bg-slate-50/80 p-5">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="text-sm font-semibold text-slate-950">
+                    {t("otherTestsPage.tooltip.cards.default.title")}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    {t("otherTestsPage.tooltip.cards.default.description")}
+                  </p>
+                </div>
+                <Tooltip title={t("otherTestsPage.tooltip.cards.default.content")}>
+                  <Button variant="outline" color="secondary">
+                    {t("otherTestsPage.tooltip.trigger")}
+                  </Button>
+                </Tooltip>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-slate-200 bg-slate-50/80 p-5">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="text-sm font-semibold text-slate-950">
+                    {t("otherTestsPage.tooltip.cards.arrow.title")}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    {t("otherTestsPage.tooltip.cards.arrow.description")}
+                  </p>
+                </div>
+                <Tooltip
+                  showArrow
+                  title={t("otherTestsPage.tooltip.cards.arrow.content")}
+                  contentProps={{ side: "top", showNotch: false }}
+                >
+                  <Button variant="soft" color="info">
+                    {t("otherTestsPage.tooltip.trigger")}
+                  </Button>
+                </Tooltip>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-slate-200 bg-slate-50/80 p-5">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="text-sm font-semibold text-slate-950">
+                    {t("otherTestsPage.tooltip.cards.rich.title")}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    {t("otherTestsPage.tooltip.cards.rich.description")}
+                  </p>
+                </div>
+                <Tooltip
+                  showArrow
+                  title={
+                    <div className="space-y-1">
+                      <div className="font-semibold">
+                        {t("otherTestsPage.tooltip.cards.rich.contentTitle")}
+                      </div>
+                      <div>{t("otherTestsPage.tooltip.cards.rich.contentBody")}</div>
+                    </div>
+                  }
+                  contentProps={{ side: "bottom", align: "end" }}
+                >
+                  <Button variant="ghost" color="primary" className="inline-flex items-center gap-2">
+                    <Layers3 className="size-4" />
+                    {t("otherTestsPage.tooltip.cards.rich.trigger")}
+                  </Button>
+                </Tooltip>
+              </div>
+            </div>
+          </div>
         </article>
       </section>
     </main>
