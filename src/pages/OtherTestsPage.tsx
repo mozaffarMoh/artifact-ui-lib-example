@@ -1,5 +1,14 @@
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Button,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
   Skeleton,
   Status,
   Tabs,
@@ -247,6 +256,82 @@ export function OtherTestsPage() {
               </div>
             </div>
           </div>
+        </article>
+
+        <article className="rounded-[28px] border border-slate-200/80 bg-white/88 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-orange-700">
+            {t("otherTestsPage.accordion.eyebrow")}
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
+            {t("otherTestsPage.accordion.title")}
+          </h2>
+          <p className="mt-3 text-sm leading-6 text-slate-600">{t("otherTestsPage.accordion.description")}</p>
+
+          <div className="mt-6 grid gap-4">
+            <Accordion type="single" collapsible variant="contained" defaultValue="item-1">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>{t("otherTestsPage.accordion.items.contained.title")}</AccordionTrigger>
+                <AccordionContent>
+                  {t("otherTestsPage.accordion.items.contained.description")}
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>{t("otherTestsPage.accordion.items.keyboard.title")}</AccordionTrigger>
+                <AccordionContent>
+                  {t("otherTestsPage.accordion.items.keyboard.description")}
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+
+            <Accordion type="multiple" variant="separated" className="mt-2">
+              <AccordionItem value="item-a">
+                <AccordionTrigger>{t("otherTestsPage.accordion.items.separated.title")}</AccordionTrigger>
+                <AccordionContent>
+                  {t("otherTestsPage.accordion.items.separated.description")}
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-b">
+                <AccordionTrigger>{t("otherTestsPage.accordion.items.states.title")}</AccordionTrigger>
+                <AccordionContent>{t("otherTestsPage.accordion.items.states.description")}</AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </article>
+
+        <article className="rounded-[28px] border border-slate-200/80 bg-white/88 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-700">
+            {t("otherTestsPage.carousel.eyebrow")}
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
+            {t("otherTestsPage.carousel.title")}
+          </h2>
+          <p className="mt-3 text-sm leading-6 text-slate-600">{t("otherTestsPage.carousel.description")}</p>
+
+          <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50/80 p-5">
+            <Carousel opts={{ align: "start", direction: "ltr" }} className="mx-auto w-full max-w-xl">
+              <CarouselContent>
+                {([1, 2, 3] as const).map((index) => (
+                  <CarouselItem key={index} className="md:basis-1/2">
+                    <div className="h-full rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-fuchsia-700">
+                        {t(`otherTestsPage.carousel.slides.${index}.eyebrow`)}
+                      </p>
+                      <h3 className="mt-3 text-lg font-semibold text-slate-950">
+                        {t(`otherTestsPage.carousel.slides.${index}.title`)}
+                      </h3>
+                      <p className="mt-2 text-sm leading-6 text-slate-600">
+                        {t(`otherTestsPage.carousel.slides.${index}.description`)}
+                      </p>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+
+          <p className="mt-4 text-sm leading-6 text-slate-600">{t("otherTestsPage.carousel.note")}</p>
         </article>
       </section>
     </main>

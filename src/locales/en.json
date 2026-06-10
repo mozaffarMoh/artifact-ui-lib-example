@@ -585,6 +585,52 @@
           "contentBody": "Latency is within target, but one region is still warming caches after rollout."
         }
       }
+    },
+    "accordion": {
+      "eyebrow": "Accordion test",
+      "title": "Accordion variants",
+      "description": "This section checks both contained and separated accordion treatments, plus disclosure and keyboard behavior.",
+      "items": {
+        "contained": {
+          "title": "Contained layout",
+          "description": "Verifies the grouped accordion surface with shared border, spacing, and open-state rhythm."
+        },
+        "keyboard": {
+          "title": "Keyboard navigation",
+          "description": "Use arrow keys, Home, and End to confirm focus movement between triggers remains predictable."
+        },
+        "separated": {
+          "title": "Separated cards",
+          "description": "Checks the alternate card-like variant where each item has its own surface and shadow."
+        },
+        "states": {
+          "title": "Disclosure states",
+          "description": "Open multiple items here to verify trigger rotation, content spacing, and transition timing."
+        }
+      }
+    },
+    "carousel": {
+      "eyebrow": "Carousel test",
+      "title": "Carousel layout",
+      "description": "This sample checks slide spacing, button positioning, and horizontal scrolling behavior in the updated carousel.",
+      "note": "Use the arrow buttons and keyboard navigation to confirm the carousel responds cleanly without layout jumps.",
+      "slides": {
+        "1": {
+          "eyebrow": "Slide 01",
+          "title": "Overview card",
+          "description": "Confirms the first slide aligns correctly inside the viewport and leaves room for navigation controls."
+        },
+        "2": {
+          "eyebrow": "Slide 02",
+          "title": "Spacing check",
+          "description": "Makes the inter-slide gutter easy to inspect across compact and wider viewport widths."
+        },
+        "3": {
+          "eyebrow": "Slide 03",
+          "title": "Navigation check",
+          "description": "Ensures the final slide can still be reached smoothly and the next button disables at the end."
+        }
+      }
     }
   }
 }
