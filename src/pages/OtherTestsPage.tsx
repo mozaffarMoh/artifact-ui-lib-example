@@ -4,11 +4,6 @@ import {
   AccordionItem,
   AccordionTrigger,
   Button,
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   Skeleton,
   Status,
   Tabs,
@@ -19,6 +14,8 @@ import {
 } from "@artifact/ui-lib";
 import { Activity, CircleAlert, Clock3, Info, Layers3 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+
+import { CarouselShowcase } from "../components/CarouselShowcase";
 
 export function OtherTestsPage() {
   const { t } = useTranslation();
@@ -298,41 +295,7 @@ export function OtherTestsPage() {
           </div>
         </article>
 
-        <article className="rounded-[28px] border border-slate-200/80 bg-white/88 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-700">
-            {t("otherTestsPage.carousel.eyebrow")}
-          </p>
-          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
-            {t("otherTestsPage.carousel.title")}
-          </h2>
-          <p className="mt-3 text-sm leading-6 text-slate-600">{t("otherTestsPage.carousel.description")}</p>
-
-          <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50/80 p-5">
-            <Carousel opts={{ align: "start", direction: "ltr" }} className="mx-auto w-full max-w-xl">
-              <CarouselContent>
-                {([1, 2, 3] as const).map((index) => (
-                  <CarouselItem key={index} className="md:basis-1/2">
-                    <div className="h-full rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-fuchsia-700">
-                        {t(`otherTestsPage.carousel.slides.${index}.eyebrow`)}
-                      </p>
-                      <h3 className="mt-3 text-lg font-semibold text-slate-950">
-                        {t(`otherTestsPage.carousel.slides.${index}.title`)}
-                      </h3>
-                      <p className="mt-2 text-sm leading-6 text-slate-600">
-                        {t(`otherTestsPage.carousel.slides.${index}.description`)}
-                      </p>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-          </div>
-
-          <p className="mt-4 text-sm leading-6 text-slate-600">{t("otherTestsPage.carousel.note")}</p>
-        </article>
+        <CarouselShowcase />
       </section>
     </main>
   );
