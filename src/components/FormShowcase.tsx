@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@artifact/ui-lib/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@artifact/ui-lib/card";
 import { DatePicker } from "@artifact/ui-lib/date-picker";
-import { Select } from "@artifact/ui-lib/select";
+import { DataCombobox, type ComboboxDataItem } from "@artifact/ui-lib/data-combobox";
 import { TextAreaField } from "@artifact/ui-lib/text-area-field";
 import { TextField } from "@artifact/ui-lib/text-field";
 import { useTranslation } from "react-i18next";
@@ -14,12 +14,12 @@ export function FormShowcase() {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [team, setTeam] = useState("platform");
   const [notes, setNotes] = useState("Verify spacing, focus rings, dark surfaces, and overlay behavior.");
-  const teamOptions = [
-    { value: "design", label: t("form.teams.design") },
-    { value: "platform", label: t("form.teams.platform") },
-    { value: "qa", label: t("form.teams.qa") },
-    { value: "ops", label: t("form.teams.ops") },
-  ] as const;
+  const teamOptions: readonly ComboboxDataItem<{ label: string }>[] = [
+    { id: "design", value: t("form.teams.design"), label: t("form.teams.design") },
+    { id: "platform", value: t("form.teams.platform"), label: t("form.teams.platform") },
+    { id: "qa", value: t("form.teams.qa"), label: t("form.teams.qa") },
+    { id: "ops", value: t("form.teams.ops"), label: t("form.teams.ops") },
+  ];
 
   return (
     <Card className="border-slate-200/80 bg-white/90 shadow-[0_20px_60px_rgba(15,23,42,0.06)]">
@@ -54,11 +54,11 @@ export function FormShowcase() {
         </div>
 
         <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
-          <Select
+          <DataCombobox
             label={t("form.team")}
-            options={teamOptions}
+            data={teamOptions}
             value={team}
-            onValueChange={setTeam}
+            onValueChange={(value) => setTeam(Array.isArray(value) ? value[0] ?? "platform" : value ?? "platform")}
             placeholder={t("form.teamPlaceholder")}
             searchable={false}
             clearable

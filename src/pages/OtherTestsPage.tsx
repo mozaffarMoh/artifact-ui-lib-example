@@ -52,10 +52,10 @@ export function OtherTestsPage() {
           <Tabs defaultValue="overview" className="mt-6 gap-5">
             <TabsList>
               <TabsTrigger value="overview">{t("otherTestsPage.tabs.items.overview.label")}</TabsTrigger>
-              <TabsTrigger value="states" variant="soft">
+              <TabsTrigger value="states">
                 {t("otherTestsPage.tabs.items.states.label")}
               </TabsTrigger>
-              <TabsTrigger value="notes" variant="solid">
+              <TabsTrigger value="notes">
                 {t("otherTestsPage.tabs.items.notes.label")}
               </TabsTrigger>
             </TabsList>

@@ -104,32 +104,37 @@ export function AppShellSidebar({ direction }: AppShellSidebarProps) {
       profileName={t("shell.language.label")}
       profileEmail={t("shell.language.description")}
       profileBadge={language.toUpperCase()}
-      profileMenu={
-        <div className="grid gap-2 p-1">
-          <Button
-            fullWidth
-            variant={language === "en" ? "solid" : "outline"}
-            color={language === "en" ? "primary" : "secondary"}
-            onClick={() => void i18n.changeLanguage("en")}
-          >
-            {t("shell.language.options.en")}
-          </Button>
-          <Button
-            fullWidth
-            variant={language === "ar" ? "solid" : "outline"}
-            color={language === "ar" ? "primary" : "secondary"}
-            onClick={() => void i18n.changeLanguage("ar")}
-          >
-            {t("shell.language.options.ar")}
-          </Button>
-          <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 px-3 py-2 text-sm text-slate-600">
-            {t("shell.language.current", {
-              language: t(`shell.language.options.${language}`),
-              direction: t(`appHero.directions.${direction}`),
-            })}
-          </div>
-        </div>
-      }
+      profileMenu={[
+        {
+          type: "custom" as const,
+          content: (
+            <div className="grid gap-2 p-1">
+              <Button
+                fullWidth
+                variant={language === "en" ? "solid" : "outline"}
+                color={language === "en" ? "primary" : "secondary"}
+                onClick={() => void i18n.changeLanguage("en")}
+              >
+                {t("shell.language.options.en")}
+              </Button>
+              <Button
+                fullWidth
+                variant={language === "ar" ? "solid" : "outline"}
+                color={language === "ar" ? "primary" : "secondary"}
+                onClick={() => void i18n.changeLanguage("ar")}
+              >
+                {t("shell.language.options.ar")}
+              </Button>
+              <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 px-3 py-2 text-sm text-slate-600">
+                {t("shell.language.current", {
+                  language: t(`shell.language.options.${language}`),
+                  direction: t(`appHero.directions.${direction}`),
+                })}
+              </div>
+            </div>
+          ),
+        },
+      ]}
       profileMenuContentProps={{ align: direction === "rtl" ? "start" : "end", className: "w-72" }}
     />
   );
