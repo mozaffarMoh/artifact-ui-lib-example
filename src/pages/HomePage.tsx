@@ -7,6 +7,7 @@ import { FormBuilderShowcase } from "../components/FormBuilderShowcase.tsx";
 import { FormShowcase } from "../components/FormShowcase";
 import { IconLibraryTest } from "../components/IconLibraryTest";
 import { IntegrationChecklist } from "../components/IntegrationChecklist";
+import { MemoizationShowcase } from "../components/MemoizationShowcase";
 import { SelectionShowcase } from "../components/SelectionShowcase";
 import { TableShowcase } from "../components/TableShowcase";
 
@@ -55,6 +56,10 @@ export function HomePage() {
 
       <section id="feedback">
         <FeedbackShowcase />
+      </section>
+
+      <section id="memoization">
+        <MemoizationShowcase />
       </section>
     </main>
   );
